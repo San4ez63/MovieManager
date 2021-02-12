@@ -1,9 +1,10 @@
 package ru.netology.manager;
 
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import ru.netology.domain.Movie;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 class MovieManagerDefaultValueTest {
     MovieManager manager = new MovieManager();
@@ -19,13 +20,16 @@ class MovieManagerDefaultValueTest {
     Movie tenth = new Movie(10, "Гипноз", "https://", "триллер");
     Movie eleventh = new Movie(11, "2040: Будущее ждёт", "https://", "документальный");
 
+    @BeforeEach
+    public void setUp() {
+        manager.addFilm(first);
+        manager.addFilm(second);
+        manager.addFilm(third);
+    }
 
     @Test
     public void shouldCheckDefaultValue() {
 
-        manager.addFilm(first);
-        manager.addFilm(second);
-        manager.addFilm(third);
         manager.addFilm(fourth);
         manager.addFilm(fifth);
         manager.addFilm(sixth);
@@ -44,9 +48,6 @@ class MovieManagerDefaultValueTest {
     @Test
     public void shouldCheckValueMoreDefault() {
 
-        manager.addFilm(first);
-        manager.addFilm(second);
-        manager.addFilm(third);
         manager.addFilm(fourth);
         manager.addFilm(fifth);
         manager.addFilm(sixth);
@@ -65,10 +66,6 @@ class MovieManagerDefaultValueTest {
 
     @Test
     public void shouldCheckValueLessDefault() {
-        manager.addFilm(first);
-        manager.addFilm(second);
-        manager.addFilm(third);
-
 
         Movie[] actual = manager.getLastFilms();
         Movie[] expected = new Movie[]{third, second, first};

@@ -3,8 +3,14 @@ package ru.netology.manager;
 import ru.netology.domain.Movie;
 
 public class MovieManager {
+
     private Movie[] movies = new Movie[0];
-    private int defaultValueLength = 10;
+    private final int defaultValueLength;
+
+    {
+        defaultValueLength = 10;
+    }
+
     private int valueLength;
 
 
