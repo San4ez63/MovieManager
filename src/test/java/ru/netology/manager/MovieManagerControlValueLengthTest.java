@@ -22,7 +22,7 @@ class MovieManagerControlValueLengthTest {
 
     @Test
     public void shouldCheckControlValueLength() {
-        MovieManager manager = new MovieManager(5);
+        MovieManager manager = new MovieManager( 5);
 
         manager.addFilm(first);
         manager.addFilm(second);
@@ -45,7 +45,7 @@ class MovieManagerControlValueLengthTest {
 
     @Test
     public void shouldCheckValueMoreControlLength() {
-        MovieManager manager = new MovieManager(11);
+        MovieManager manager = new MovieManager( 11);
 
         manager.addFilm(first);
         manager.addFilm(second);
@@ -68,7 +68,7 @@ class MovieManagerControlValueLengthTest {
 
     @Test
     public void shouldCheckValueLessControlLength() {
-        MovieManager manager = new MovieManager(0);
+        MovieManager manager = new MovieManager( 0);
 
         manager.addFilm(first);
         manager.addFilm(second);
