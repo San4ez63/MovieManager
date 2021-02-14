@@ -9,7 +9,6 @@ public class MovieManager {
     {
         defaultValueLength = 10;
     }
-
     private int valueLength;
 
 
@@ -33,10 +32,8 @@ public class MovieManager {
             if (defaultValueLength < currentValueLight) {
                 currentValueLight = defaultValueLength;
             }
-        } else {
-            if (valueLength < currentValueLight) {
-                currentValueLight = valueLength;
-            }
+        } else if (valueLength < currentValueLight) {
+            currentValueLight = valueLength;
         }
         Movie[] result = new Movie[currentValueLight];
         for (int i = 0; i < result.length; i++) {
